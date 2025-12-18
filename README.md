@@ -38,15 +38,13 @@ https://drive.google.com/drive/folders/1U6UVj4NxoxD7vxPspGEWzoa8rwbasje5?usp=sha
 
 After downloading, place files as follows:
 ```
-weights/ # model weights (.pt / .pth)
-data/cabinet_dataset/test/ # test dataset
+weights/                    # model weights (.pt)
+data/cabinet_dataset/test/  # test dataset
 ```
 
 Expected dataset structure:
 ```
-data/cabinet_dataset/
-test/
-<class_name>/*.png
+data/cabinet_dataset/test/<class_name>/*.png
 ```
 
 ---
@@ -82,8 +80,7 @@ python inference_yolo.py \
   --model weights/yolov8n_cls_cabinet_224_v1.pt \
   --data_root data/cabinet_dataset \
   --split test \
-  --outdir inference_results \
-  --device 0
+  --outdir inference_results
 ```
 
 ### EfficientNet
