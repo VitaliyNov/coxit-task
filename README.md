@@ -121,8 +121,110 @@ Including:
 - example prediction grids
 
 ---
+---
+
+## Training & Dataset Preparation Scripts
+
+> **Note:** Training scripts are provided for reproducibility and experimentation.  
+> Pretrained weights are supplied separately and training is **not required** to run inference.
+
+---
+
+### Dataset Preparation
+
+#### `data2dataset.py`
+
+Creates a classification dataset from annotated drawing pages.
+
+**Key functionality:**
+- Parses COCO-style `*_simple.json` annotations
+- Extracts cabinet object crops from page images
+- Maps fine-grained categories to target cabinet classes
+- Splits data at **page level** to avoid leakage
+- Supports **train / val / test (60 / 20 / 20)** split
+- Controls class balance and validation/test caps
+
+**Important arguments:**
+- `--root` — path to `annotated_pdfs_and_data`
+- `--simple_categories` — path to `simple_categories.json`
+- `--out` — output dataset directory
+- `--seed` — random seed for reproducible splits
+- `--max_mult` — limit validation/test overfill for large classes
+- `--pad` — padding added around bounding boxes
+- `--min_size` — minimum crop size (pixels)
+
+---
+
+### Training Scripts
+
+#### `train_yolo_cls.py`
+
+Trains YOLO classification models (YOLOv8 / YOLOv11).
+
+**Features:**
+- Uses Ultralytics training API
+- Supports pretrained initialization
+- Automatic mixed precision (AMP)
+- Early stopping via patience parameter
+
+**Key parameters:**
+- `epochs`
+- `imgsz`
+- `batch`
+- `lr0`
+- `patience`
+
+---
+
+#### `train_efficientnet.py`
+
+Trains EfficientNet classification models using `timm`.
+
+**Features:**
+- Supports EfficientNet B0–B2 variants
+- Optional weighted sampler for class imbalance
+- Standard ImageNet normalization
+- Cosine or step learning rate scheduling
+
+---
+
+#### `train_convnext.py`
+
+Trains ConvNeXt classification models.
+
+**Features:**
+- Uses pretrained ConvNeXt backbones
+- AdamW optimizer with weight decay
+- Designed for small and medium-scale datasets
+- Same dataset structure as EfficientNet training
+
+---
+
+### Utilities
+
+#### `oversample.py`
+
+Helper script for handling class imbalance during training.
+
+**Use cases:**
+- Generates weighted sampling statistics
+- Can be used to oversample minority classes
+- Intended for experimentation, not required for inference
+
+---
+
+### Output Artifacts (Training)
+
+Training scripts generate:
+- Model checkpoints
+- Training logs
+- TensorBoard-compatible metrics
+
+These artifacts are intentionally excluded from GitHub and stored locally.
+
+---
+
 
 ## Notes
-- Training artifacts and full datasets are intentionally excluded from GitHub
 - Evaluation is fully reproducible using provided scripts
 - All reported metrics are computed on a held-out test set
