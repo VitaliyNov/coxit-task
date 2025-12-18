@@ -2,11 +2,8 @@
 runs/
 runs_*/
 
-# large datasets (keep only test subset)
-data/**/*
-!data/cabinet_dataset/
-!data/cabinet_dataset/test/
-!data/cabinet_dataset/test/**
+# large datasets
+data/
 
 # weights (keep folder, not files)
 weights/*
