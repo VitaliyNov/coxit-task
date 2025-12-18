@@ -1,0 +1,18 @@
+Split: test
+Checkpoint: weights\efficientnetb2_cabinet_224_v1.pt
+Model: tf_efficientnet_b2
+Images: 442
+Accuracy: 0.9729
+
+Classification report:
+               precision    recall  f1-score   support
+
+     lc_bcabo     0.9773    0.9934    0.9853       303
+  lc_bcabocub     0.7500    1.0000    0.8571         6
+lc_muscabinso     1.0000    0.9815    0.9907        54
+   lc_wcabcub     0.8571    1.0000    0.9231        18
+     lc_wcabo     1.0000    0.8525    0.9204        61
+
+     accuracy                         0.9729       442
+    macro avg     0.9169    0.9655    0.9353       442
+ weighted avg     0.9752    0.9729    0.9727       442

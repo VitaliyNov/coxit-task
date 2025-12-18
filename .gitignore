@@ -1,0 +1,21 @@
+# training artifacts
+runs/
+runs_*/
+
+# large datasets (keep only test subset)
+data/**/*
+!data/cabinet_dataset/
+!data/cabinet_dataset/test/
+!data/cabinet_dataset/test/**
+
+# weights (keep folder, not files)
+weights/*
+!weights/.gitkeep
+
+# python
+__pycache__/
+*.pyc
+
+# OS
+.DS_Store
+Thumbs.db

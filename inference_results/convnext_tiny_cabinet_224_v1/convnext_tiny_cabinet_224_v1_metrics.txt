@@ -1,0 +1,19 @@
+Split: test
+Checkpoint: weights\convnext_tiny_cabinet_224_v1.pt
+Model: convnext_tiny
+Images: 442
+Accuracy: 0.7760
+
+Classification report:
+               precision    recall  f1-score   support
+
+     lc_bcabo     0.8394    0.9142    0.8752       303
+  lc_bcabocub     0.0000    0.0000    0.0000         6
+lc_muscabinso     1.0000    0.2963    0.4571        54
+   lc_wcabcub     0.2500    0.3333    0.2857        18
+     lc_wcabo     0.6567    0.7213    0.6875        61
+
+     accuracy                         0.7760       442
+    macro avg     0.5492    0.4530    0.4611       442
+ weighted avg     0.7984    0.7760    0.7623       442
+

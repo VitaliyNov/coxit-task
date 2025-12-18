@@ -1,0 +1,16 @@
+Split: test
+Num images: 442
+Accuracy: 0.8597
+
+Classification report:
+               precision    recall  f1-score   support
+
+     lc_bcabo     0.8951    0.9571    0.9250       303
+  lc_bcabocub     0.3529    1.0000    0.5217         6
+lc_muscabinso     0.8214    0.4259    0.5610        54
+   lc_wcabcub     1.0000    0.7222    0.8387        18
+     lc_wcabo     0.8000    0.7869    0.7934        61
+
+     accuracy                         0.8597       442
+    macro avg     0.7739    0.7784    0.7280       442
+ weighted avg     0.8699    0.8597    0.8534       442
