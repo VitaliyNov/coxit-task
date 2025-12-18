@@ -14,6 +14,7 @@ git clone https://github.com/VitaliyNov/coxit-task.git
 cd coxit-task
 pip install -r requirements.txt
 ```
+> Python 3.10+ required
 
 ---
 
