@@ -5,6 +5,18 @@ The task focuses on comparing different model families on a unified test set.
 
 ---
 
+## Setup
+
+Clone the repository and install dependencies:
+
+```bash
+git clone https://github.com/VitaliyNov/coxit-task.git
+cd coxit-task
+pip install -r requirements.txt
+```
+
+---
+
 ## Objective
 
 Classify cabinet images into the following categories:
