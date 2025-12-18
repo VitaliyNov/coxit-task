@@ -121,7 +121,8 @@ Including:
 - example prediction grids
 
 ---
----
+
+
 
 ## Training & Dataset Preparation Scripts
 
